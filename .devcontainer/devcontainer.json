@@ -1,0 +1,30 @@
+{
+    "name": "Rust Development",
+    "dockerFile": "Dockerfile",
+    "mounts": [
+      {
+        "source": "dind-var-lib-docker-${devcontainerId}",
+        "target": "/var/lib/docker",
+        "type": "volume"
+      }
+    ],
+    "customizations": {
+      "vscode": {
+        "extensions": [
+            "rust-lang.rust-analyzer",
+            "dustypomerleau.rust-syntax",
+            "chunsen.bracket-select",
+            "FittenTech.Fitten-Code",
+            "tamasfe.even-better-toml"
+        ]
+      }
+    },
+    "forwardPorts": [],
+    "containerEnv": {
+      "TZ": "Asia/Shanghai"
+    },
+    "postCreateCommand": "cargo build",
+    "features":{
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    }
+  }
