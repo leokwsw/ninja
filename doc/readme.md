@@ -45,7 +45,7 @@ ninja stop
 ninja restart
 
 # Check background process status
-ninja status
+ninja ps
 
 # View background process logs
 ninja log
@@ -265,10 +265,9 @@ Commands:
   stop     Stop the HTTP server daemon
   start    Start the HTTP server daemon
   restart  Restart the HTTP server daemon
-  status   Status of the Http server daemon process
+  ps       Http server running process information
   log      Show the Http server daemon log
-  genca    Generate MITM CA certificate
-  ua      Show the impersonate user-agent list
+  ua       Generate MITM CA certificate
   gt       Generate config template file (toml format file)
   update   Update the application
   help     Print this message or the help of the given subcommand(s)
