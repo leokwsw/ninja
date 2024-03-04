@@ -1,9 +1,9 @@
 FROM ubuntu:focal
 
-LABEL org.opencontainers.image.authors "gngpp <gngppz@gmail.com>"
-LABEL org.opencontainers.image.source https://github.com/gngpp/ninja
+LABEL org.opencontainers.image.authors "leokwsw <leokwsw@gmail.com>"
+LABEL org.opencontainers.image.source https://github.com/leokwsw/ninja
 LABEL name ninja
-LABEL url https://github.com/gngpp/ninja
+LABEL url https://github.com/leokwsw/ninja
 
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC
 RUN apt update && apt install -y curl gpg systemd tzdata socat
