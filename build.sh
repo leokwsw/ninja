@@ -23,13 +23,13 @@ target_architectures=(
 )
 
 pull_docker_image() {
-    image="ghcr.io/gngpp/rust-musl-cross:$1"
+    image="ghcr.io/rust-cross/rust-musl-cross:$1"
     echo "Pulling $image"
     docker pull $image
 }
 
 rmi_docker_image() {
-    image="ghcr.io/gngpp/rust-musl-cross:$1"
+    image="ghcr.io/rust-cross/rust-musl-cross:$1"
     echo "Removing $image docker image"
     if [ "$rmi" = "true" ]; then
         docker rmi $image
@@ -49,7 +49,7 @@ build_macos_target() {
 }
 
 build_linux_target() {
-    docker_image="ghcr.io/gngpp/rust-musl-cross:$1"
+    docker_image="ghcr.io/rust-cross/rust-musl-cross:$1"
 
     features=""
     if [ "$1" = "armv5te-unknown-linux-musleabi" ] || [ "$1" = "arm-unknown-linux-musleabi" ] || [ "$1" = "arm-unknown-linux-musleabihf" ]; then
@@ -84,7 +84,7 @@ build_linux_target() {
 }
 
 build_windows_target() {
-    docker_image="ghcr.io/gngpp/rust-musl-cross:$1"
+    docker_image="ghcr.io/rust-cross/rust-musl-cross:$1"
 
     echo "Building $1"
     docker run --rm -t \
